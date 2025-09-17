@@ -32,7 +32,7 @@ public class Main {
 
         List<Post> posts = mapper.readValue(response.getEntity().getContent(), new TypeReference<List<Post>>() {
         });
-        posts.stream().filter(p -> p.getUpvotes() == null).forEach(System.out::println);
-//        posts.stream().filter(p -> p.getUpvotes() != null && p.getUpvotes() > 0).forEach(System.out::println);
+//        posts.stream().filter(p -> p.getUpvotes() == null).forEach(System.out::println);
+        posts.stream().filter(p -> p.getUpvotes() != null && p.getUpvotes() > 0).forEach(System.out::println);
     }
 }
